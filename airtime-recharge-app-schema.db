@@ -1,0 +1,22 @@
+CREATE DB ara_schema;
+
+CREATE TABLE admin(
+		admin_id SERIAL PRIMARY KEY,
+		email VARCHAR(100) UNIQUE NOT NULL,
+		password VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE user(
+		user_id SERIAL PRIMARY KEY,
+		fName VARCHAR(100) NOT NULL,
+		lName VARCHAR(100) NOT NULL,
+		email VARCHAR(100) UNIQUE NOT NULL,
+		phoneNumner VARCHAR(100) UNIQUE NOT NULL
+)
+
+CREATE TABLE rechargeDetails(
+		transaction_id SERIAL PRIMARY KEY,
+		phoneNumber VARCHAR(100) NOT NULL,
+		amountRecharged VARCHAR(10) NOT NULL,
+		dateTime DATE NOT NULL DEFAULT CURRENT_DATE
+)
